@@ -106,7 +106,8 @@ INSERT INTO PERSON
 ('xx311', 'Xavier', 'Xylophone',        '4 4th Lane',          'Orlando',          'FL', '27799', '9491119999', '613004444'),
 ('as926', 'Arnold', 'Shirtsnegotiator', '92 Choppa Pkwy',      'Sacramento',       'CA', '91191', '9490009999', '333886666'),
 ('ss666', 'Sordid', 'Snake',            '5 Shadowy Moose Ave', 'Fairfax',          'VA', '11133', '1113334444', '000995555'),
-('lg486', 'Leorge', 'Gucas',            '1 Groundcrawler Rd',  'Santa Barbara',    'CA', '94545', '9495551010', '777112222');
+('lg486', 'Leorge', 'Gucas',            '1 Groundcrawler Rd',  'Santa Barbara',    'CA', '94545', '9495551010', '777112222'),
+('rs600', 'Robert', 'Stevens',          '65 Florida Ln',       'Los Angeles',      'CA', '92299', '9496667777', '000998888');
 
 INSERT INTO PATIENT 
 (patientID, phoneNum, dob, personID) VALUES
@@ -132,8 +133,7 @@ INSERT INTO SPECIALTY
 INSERT INTO DOCTORSPECIALTY 
 (doctorID, specialtyID) VALUES
 ('AS9260', 'DERM'),
-('SS6660', 'ORTH'),
-('LG4860', 'RADI');
+('SS6660', 'ORTH');
 
 INSERT INTO PATIENTVISIT
 (visitID, patientID, doctorID, visitDate, docNote) VALUES
@@ -151,6 +151,7 @@ INSERT INTO PRESCRIPTION
 ('72214', 'Raspirin'),
 ('81212', 'Sphincter Terminator'),
 ('81213', 'Raspirin'),
+('81214', 'Vicodin'),
 ('90401', 'Hydronicotine'),
 ('90402', 'Raspirin'),
 ('91003', 'Raspirin'),
@@ -166,6 +167,7 @@ INSERT INTO PVISITDESCRIPTION
 ('72214', '2020A1001'),
 ('81212', '2020A2001'),
 ('81213', '2020A2001'),
+('81214', '2020A2001'),
 ('90401', '2020A2013'),
 ('90402', '2020A2013'),
 ('91003', '2020A2099'),
