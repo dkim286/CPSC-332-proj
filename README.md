@@ -27,4 +27,4 @@ Items with ~~strikethru~~ styling are finished tasks.
 
     * If first time backup take backup of all the tables 
     * If not the first time remove the previous backup tables and take new backups. 
-    * EXTRA CREDIT: Create a stored procedure that gives Prescription name and the number
+    * EXTRA CREDIT: Create a stored procedure that gives Prescription name and the number of patients from the city of Fullerton with that prescription. Example: `|20| Aspirin | 2| Ciprofloxacin`...
