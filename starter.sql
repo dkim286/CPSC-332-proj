@@ -122,7 +122,9 @@ INSERT INTO DOCTOR
 (doctorID, medicalDegree, personID) VALUES
 ('AS9260', 'M.D.', 'as926'),
 ('SS6660', 'M.D.', 'ss666'),
-('LG4860', 'M.D.',   'lg486');
+('LG4860', 'M.D.', 'lg486'),
+('RS6000', 'M.D.', 'rs600');
+-- added robert as a doctor so we can find his patients (Q2) also added a patient under his care (PATIENT and PATIENTVISIT)
 
 INSERT INTO SPECIALTY 
 (specialtyID, specialtyName) VALUES
@@ -143,7 +145,8 @@ INSERT INTO PATIENTVISIT
 ('2020A2099', 'p-ma204', 'LG4860', '2020-01-21', 'How did he break THAT?'),
 ('2020A2112', 'p-xx311', 'SS6660', '2020-02-01', 'Mallets for limbs, huh?'),
 ('2020A2141', 'p-as926', 'LG4860', '2020-02-04', 'I told you not to bend it that way, but here we are.'),
-('2020A2199', 'p-ss666', 'LG4860', '2020-02-05', 'Wooden mallets present inside forearm of patient. Am I working with imbeciles?');
+('2020A2199', 'p-ss666', 'LG4860', '2020-02-05', 'Wooden mallets present inside forearm of patient. Am I working with imbeciles?'),
+('2020A2203', 'p-ma100', 'RS6000', '2020-02-06', 'Never seen a D');
 
 INSERT INTO PRESCRIPTION 
 (prescriptionID, prescriptionName) VALUES
@@ -191,3 +194,27 @@ INSERT INTO PVISITTEST
 
 
 
+/* Doctor Robert Stevens is retiring. We need to inform all his patients, 
+and ask them to select a new doctor. For this purpose, 
+Create a VIEW that finds the names and Phone numbers of all of Robert's patients. */
+
+-- could we make it so any doctorsID entered into textbox gives that doctors patients
+
+CREATE VIEW robertsPatients
+AS
+SELECT firstName, phoneNum
+FROM PERSON
+WHERE personID = (
+	SELECT personID
+    FROM PATIENT
+    WHERE patientID = (
+		SELECT patientID
+		FROM PATIENTVISIT
+		WHERE doctorID = 'RS6000'));
+
+
+/* Create trigger on the DoctorSpeciality so that every time a doctor specialty is updated or added, a new entry is made in the audit table. The audit table will have the following (Hint-The trigger will be on DoctorSpecialty table).
+a. Doctor’s FirstName
+b. Action(indicate update or added)
+c. Specialty
+d. Date of modification */
