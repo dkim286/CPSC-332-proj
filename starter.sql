@@ -232,7 +232,7 @@ JOIN PATIENTVISIT ON PATIENTVISIT.doctorID = DOCTOR.doctorID
 JOIN PVISITDESCRIPTION ON PATIENTVISIT.visitID = PVISITDESCRIPTION.visitID
 JOIN PRESCRIPTION ON PVISITDESCRIPTION.prescriptionID = PRESCRIPTION.prescriptionID AND PRESCRIPTION.prescriptionName = "vicodin";
 
-//SELECT * FROM vicPresc;
+/*SELECT * FROM vicPresc;*/
 
 /* Create a view which shows the First Name and Last name of all doctors and their specialty’s. */
 
@@ -244,7 +244,7 @@ JOIN DOCTOR ON PERSON.personID = DOCTOR.personID
 JOIN DOCTORSPECIALTY ON DOCTOR.doctorID = DOCTORSPECIALTY.doctorID
 JOIN SPECIALTY ON DOCTORSPECIALTY.specialtyID = SPECIALTY.specialtyID;
 
-//SELECT * FROM docSpeclty;
+/*SELECT * FROM docSpeclty;*/
 
 /* Modify the view created in Q4 to show the First Name and Last name of all doctors and their specialties ALSO include doctors who DO NOT have any specialty. */
 
@@ -255,6 +255,6 @@ RIGHT JOIN DOCTOR ON PERSON.personID = DOCTOR.personID
 LEFT JOIN DOCTORSPECIALTY ON DOCTOR.doctorID = DOCTORSPECIALTY.doctorID
 LEFT JOIN SPECIALTY ON DOCTORSPECIALTY.specialtyID = SPECIALTY.specialtyID;
 
-//SELECT * FROM docSpeclty;
+/*SELECT * FROM docSpeclty; */
 
 
