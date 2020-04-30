@@ -2,6 +2,46 @@
 
 yeah
 
+# Running the page
+
+Getting this project directory inside XAMPP's scope is more annoying and involved than it should be.
+
+## Create a `connection.txt` file
+
+```
+<?php
+        $servername="127.0.0.1";
+        $dbname="DocOffice";
+        $port=3306;
+        $username="root";
+        $password="your password here";
+?>
+```
+
+## Make the `project` directory visible to XAMPP
+
+* Method 1: Use symlinks
+
+Use this method *if and only if* you've cloned this repo inside a folder with 'all' rwx permissions, like `/var/www` for example.
+
+Dump a symlink in the XAMPP htdocs folder (for me, it's `/opt/lampp/htdocs`):
+
+```text
+$ ln -s path/to/project/dir /opt/lampp/htdocs
+```
+
+* Method 2: Copy it over
+
+Just copy the entire folder to `/opt/lampp/htdocs`. Be extra careful which file you're making changes to.
+
+## Point the browser at it
+
+http://localhost/project/home.php
+
+# `backup.php`
+
+For now, this script dumps the backup file inside `/tmp` folder, which exists in both Linux and macOS. I have no idea what the equivalent is for Windows, but the professor is most likely going to grade this on a macOS so I think we're okay for now.
+
 # Tasks
 
 Items with ~~strikethru~~ styling are finished tasks. 
