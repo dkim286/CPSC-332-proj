@@ -19,7 +19,7 @@
                         <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                           <div class="btn-group mr-2" role="group" aria-label="Graded portion">
                             <button type="button" class="btn btn-secondary" onclick="window.location.href='./1.php'">1</button>
-                            <button type="button" class="btn btn-secondary">2</button>
+                            <button type="button" class="btn btn-secondary" onclick="window.location.href='./2.php'">2</button>
                             <button type="button" class="btn btn-secondary">3</button>
                             <button type="button" class="btn btn-secondary">4</button>
                             <button type="button" class="btn btn-secondary">5</button>
