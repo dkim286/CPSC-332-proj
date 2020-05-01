@@ -8,7 +8,7 @@
 <body class="container">
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">CPSC 332-04 Project</h1>
+    <h1 class="display-4"><a href="./home.php">CPSC 332-04 Project</a></h1>
     <p class="lead">Group: Remastered by LucasArts</p>
   </div>
 </div>
