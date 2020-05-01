@@ -58,6 +58,12 @@ CREATE TABLE DOCTORSPECIALTY (
   foreign key (specialtyID) references SPECIALTY(specialtyID)
 );
 
+CREATE TABLE AUDIT (
+  dFirstName varchar(10) not null,
+  tableAction char(6) not null,
+  specialtyName varchar(50) not null
+);
+
 CREATE TABLE PATIENTVISIT (
   visitID varchar(10) not null,
   patientID char(7) not null,
