@@ -63,8 +63,8 @@ Items with ~~strikethru~~ styling are finished tasks.
     * Specialty 
     * Date of modification 
  
-1.  Create a script to do the following (Write the script for this) 
+1.  ~~Create a script to do the following (Write the script for this) ~~
 
-    * If first time backup take backup of all the tables 
-    * If not the first time remove the previous backup tables and take new backups. 
-    * EXTRA CREDIT: Create a stored procedure that gives Prescription name and the number of patients from the city of Fullerton with that prescription. Example: `|20| Aspirin | 2| Ciprofloxacin`...
+    * ~~If first time backup take backup of all the tables~~
+    * ~~If not the first time remove the previous backup tables and take new backups.~~
+    * ~~EXTRA CREDIT: Create a stored procedure that gives Prescription name and the number of patients from the city of Fullerton with that prescription. Example: `|20| Aspirin | 2| Ciprofloxacin`... ~~
