@@ -24,7 +24,7 @@
                             <button type="button" class="btn btn-secondary">4</button>
                             <button type="button" class="btn btn-secondary">5</button>
                             <button type="button" class="btn btn-secondary">6</button>
-                            <button type="button" class="btn btn-secondary">7</button>
+                            <button type="button" class="btn btn-secondary" onclick="window.location.href='./7.php'">7</button>
                           </div>
                           <div class="btn-group mr-2" role="group" aria-label="Extra credit">
                             <button type="button" class="btn btn-secondary" onclick="window.location.href='./extracred.php'">7e</button>
