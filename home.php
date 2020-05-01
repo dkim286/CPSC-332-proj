@@ -32,7 +32,4 @@ else
 
 
 $conn->close();
-
-// run backup script
-$what = exec("php backup.php");
 ?>
