@@ -1,6 +1,6 @@
 <?php
-include('HeaderFile.php');
-include('ConnectionData.txt');
+include('header.php');
+include('connection.txt');
 
 $conn=new mysqli($servername, $username, $password);
 
@@ -28,7 +28,7 @@ else
 
 // run the script for stored procedure
 $query = file_get_contents('./extracred.sql');
-if ($result = $conn->multi_query($query))
+if ($result = $conn->multi_query("$query"))
 {
     while ($conn->next_result())
     {
