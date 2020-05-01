@@ -30,39 +30,6 @@ else
     die("DB  error: " . $conn->error);
 }
 
-/* test it by throwing an example query at it */
-
-$query = "select * from DOCTOR,PERSON where DOCTOR.personID = PERSON.personID;";
-
-if ($result = $conn->query($query)) 
-{
-    print "<pre>";
-    print "<table border=1 align=center>";
-    print "<tr>
-        <td>doctorID </td>
-        <td>Last Name</td>
-        <td>First Name</td>
-        </tr>
-        ";
-
-    while($row = $result->fetch_array(MYSQLI_BOTH))
-    {
-        print "\n";
-        print "<tr>
-            <td>$row[doctorID] </td>
-            <td> $row[lastName]  </td>
-            <td>$row[firstName] </td>
-            </tr>
-        ";
-    }
-    print "</table>";
-    print "</pre>";
-    $result->free();
-} 
-else 
-{
-    die("DB  error: " . $conn->error);
-}
 
 $conn->close();
 
