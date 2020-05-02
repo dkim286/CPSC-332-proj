@@ -6,4 +6,4 @@ BEFORE INSERT ON DOCTORSPECIALTY for each row
 CREATE TRIGGER SpecialtyToAudit2    
 BEFORE UPDATE ON DOCTORSPECIALTY for each row
     INSERT INTO AUDIT (dFirstName, tableAction, specialtyName)
-	VALUES (firstName,'UPDATE', New.specialtyID);
+	VALUES (New.doctorID,'UPDATE', New.specialtyID);
