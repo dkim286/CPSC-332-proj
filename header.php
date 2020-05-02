@@ -20,10 +20,10 @@
                           <div class="btn-group mr-2" role="group" aria-label="Graded portion">
                             <button type="button" class="btn btn-secondary" onclick="window.location.href='./1.php'">1</button>
                             <button type="button" class="btn btn-secondary" onclick="window.location.href='./2.php'">2</button>
-                            <button type="button" class="btn btn-secondary">3</button>
-                            <button type="button" class="btn btn-secondary">4</button>
-                            <button type="button" class="btn btn-secondary">5</button>
-                            <button type="button" class="btn btn-secondary">6</button>
+                            <button type="button" class="btn btn-secondary" onclick="window.location.href='./3.php'">3</button>
+                            <button type="button" class="btn btn-secondary" onclick="window.location.href='./4.php'">4</button>
+                            <button type="button" class="btn btn-secondary" onclick="window.location.href='./5.php'">5</button>
+                            <button type="button" class="btn btn-secondary" onclick="window.location.href='./6.php'">6</button>
                             <button type="button" class="btn btn-secondary" onclick="window.location.href='./7.php'">7</button>
                           </div>
                           <div class="btn-group mr-2" role="group" aria-label="Extra credit">
