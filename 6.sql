@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS AUDIT;
 CREATE TABLE AUDIT (
   dFirstName varchar(10) not null,
   tableAction char(6) not null,
@@ -23,3 +24,6 @@ AFTER UPDATE ON DOCTORSPECIALTY for each row
             (SELECT specialtyName from SPECIALTY where specialtyID = 
 				(SELECT specialtyID from DOCTORSPECIALTY where specialtyID = New.specialtyID)), 
             CURRENT_TIMESTAMP);
+
+SELECT * 
+FROM AUDIT;
