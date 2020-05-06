@@ -1,7 +1,6 @@
-CREATE TRIGGER SpecialtyToAudit
-BEFORE INSERT ON DOCTORSPECIALTY for each row	
-    INSERT INTO AUDIT (dFirstName, tableAction, specialtyName)
-    VALUES (New.doctorID, 'INSERT', New.specialtyID);
+CREATE TABLE AUDIT (
+  dFirstName varchar(10) not null,
+  tableAction char(6) not null,
   specialtyName varchar(50) not null,
   modDate date not null
 );
