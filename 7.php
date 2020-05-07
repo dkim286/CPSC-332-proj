@@ -18,7 +18,7 @@ else
 
 print "
 <p>
-Writing backup...
+Writing backup to '/tmp/DocOffice.bak'...
 </p>";
 
 // run backup script
@@ -29,7 +29,17 @@ if ($ret_val == 0)
 }
 else
 {
-    print "<p>Backup failed!</p>";
+    print "<p>Backup failed! Trying fallback location (./DocOffice.bak)...</p>";
+
+    $exit_code = exec("php backup_fallback.php", $output, $ret_val);
+    if ($ret_val == 0)
+    {
+        print "<p>Done! Backup is in the project directory.</p>";
+    }
+    else
+    {
+        print "<p>Backup failed! Couldn't write to project directory (check your folder permissions)";
+    }
 }
 
 // print out the contents of backup.php
