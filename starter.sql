@@ -103,9 +103,9 @@ INSERT INTO PERSON
 ('ma100', 'Mark',   'Antony',           '123 Nile Ave',        'Huntington Beach', 'CA', '98765', '9493334444', '111003333'),
 ('nb090', 'Nimby',  'Baron',            '99 My Way',           'Irvine',           'CA', '92222', '9491114444', '000332222'),
 ('ma204', 'Max',    'Axen',             '44 Tree Rd. APT #M8', 'Thousand Oaks',    'CA', '98080', '9491113333', '111996666'),
-('xx311', 'Xavier', 'Xylophone',        '4 4th Lane',          'Orlando',          'FL', '27799', '9491119999', '613004444'),
+('xx311', 'Xavier', 'Xylophone',        '4 4th Lane',          'Fullerton',          'FL', '27799', '9491119999', '613004444'),
 ('as926', 'Arnold', 'Shirtsnegotiator', '92 Choppa Pkwy',      'Sacramento',       'CA', '91191', '9490009999', '333886666'),
-('ss666', 'Sordid', 'Snake',            '5 Shadowy Moose Ave', 'Fairfax',          'VA', '11133', '1113334444', '000995555'),
+('ss666', 'Sordid', 'Snake',            '5 Shadowy Moose Ave', 'Fullerton',          'VA', '11133', '1113334444', '000995555'),
 ('lg486', 'Leorge', 'Gucas',            '1 Groundcrawler Rd',  'Santa Barbara',    'CA', '94545', '9495551010', '777112222'),
 ('rs600', 'Robert', 'Stevens',          '65 Florida Ln',       'Los Angeles',      'CA', '92299', '9496667777', '000998888');
 
