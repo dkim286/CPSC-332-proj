@@ -41,40 +41,40 @@ else
     die("DB query error: " . $conn->error);
 }
 
-// display Audit
-if ($result = $conn->query("
-                           DROP TABLE IF EXISTS AUDIT;
-                           CREATE TABLE AUDIT (
-                               dFirstName varchar(10) not null,
-                               tableAction char(6) not null,
-                               specialtyName varchar(50) not null,
-                               modDate date not null
-                            );
-                                                      
-                           DROP TRIGGER IF EXISTS SpecialtyToAudit;
-                           CREATE TRIGGER SpecialtyToAudit
-                           AFTER INSERT ON DOCTORSPECIALTY for each row
-                               INSERT INTO AUDIT (dFirstName, tableAction, specialtyName, modDate)
-                               VALUES ((SELECT firstName FROM PERSON where personID =
-                                           (SELECT personID from DOCTOR where DoctorID = new.doctorID)), 'INSERT',
-                                       (SELECT specialtyName from SPECIALTY where specialtyID =
-                                           (SELECT specialtyID from DOCTORSPECIALTY where specialtyID = New.specialtyID)),
-                                       CURRENT_TIMESTAMP);
-                             
-                           DROP TRIGGER IF EXISTS SpecialtyToAudit2;
-                           CREATE TRIGGER SpecialtyToAudit2
-                           AFTER UPDATE ON DOCTORSPECIALTY for each row
-                               INSERT INTO AUDIT (dFirstName, tableAction, specialtyName, modDate)
-                               VALUES ((SELECT firstName FROM PERSON where personID =
-                                           (SELECT personID from DOCTOR where DoctorID = new.doctorID)), 'UPDATE',
-                                       (SELECT specialtyName from SPECIALTY where specialtyID =
-                                           (SELECT specialtyID from DOCTORSPECIALTY where specialtyID = New.specialtyID)),
-                                       CURRENT_TIMESTAMP);
-
-                           SELECT *
-                           FROM AUDIT;"))
+// update existing specialty
+print "<p>Updating specialty for 'AS9260' to 'RADI'...</p>";
+if ($result = $conn->query(
+    "UPDATE DOCTORSPECIALTY 
+     SET specialtyID='RADI'
+     WHERE doctorID='AS9260';"))
 {
-    print "<p class='lead'>trigger on the DoctorSpeciality so that every time a doctor specialty is updated or added, a new entry is made in the audit table.</p>";
+    // successful update should trip the trigger
+    print "<p>Done.</p>";
+}
+else 
+{
+    die("update table error: " . $conn->error);
+}
+
+// insert a new specialty
+print "<p>Inserting new specialty: ('RS6000', 'RADI')...</p>";
+if ($result = $conn->query(
+    "REPLACE INTO DOCTORSPECIALTY(doctorID, specialtyID) VALUES
+    ('RS6000', 'RADI');"))
+{
+    print "<p>Done.</p>";
+    // successful insert should trip the trigger
+}
+else
+{
+    die("insert table error: " . $conn->error);
+}
+
+// display Audit
+if ($result = $conn->query("SELECT * FROM AUDIT"))
+{
+    print "<p class='lead'>
+        trigger on the DoctorSpeciality so that every time a doctor specialty is updated or added, a new entry is made in the audit table.</p>";
     print "<table class='table table-bordered'>
             <thead>
                 <tr>
@@ -103,7 +103,7 @@ if ($result = $conn->query("
 }
 else
 {
-    die("stored procedure error: " . $conn->error);
+    die("query error: " . $conn->error);
 }
 
 $conn->close();
