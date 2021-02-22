@@ -1,12 +1,12 @@
 # Final Project
 
-yeah
+Final project for CSUF's Database Concepts class. 
 
 # Running the page
 
-Getting this project directory inside XAMPP's scope is more annoying and involved than it should be.
+Getting this project directory inside XAMPP's scope is more annoying and involved than it should be. The steps are outlined below.
 
-## Create a `connection.txt` file
+## Step 1: Create a `connection.txt` file
 
 ```
 <?php
@@ -18,7 +18,7 @@ Getting this project directory inside XAMPP's scope is more annoying and involve
 ?>
 ```
 
-## Make the `project` directory visible to XAMPP
+## Step 2: Make the `project` directory visible to XAMPP
 
 * Method 1: Use symlinks
 
@@ -34,15 +34,17 @@ $ ln -s path/to/project/dir /opt/lampp/htdocs
 
 Just copy the entire folder to `/opt/lampp/htdocs`. Be extra careful which file you're making changes to.
 
-## Point the browser at it
+## Step 3: Point the browser at it
 
-http://localhost/project/home.php
+Navigate to http://localhost/project/home.php on your browser.
 
-# `backup.php`
+# Miscellany 
+
+## `backup.php`
 
 For now, this script dumps the backup file inside `/tmp` folder, which exists in both Linux and macOS. I have no idea what the equivalent is for Windows, but the professor is most likely going to grade this on a macOS so I think we're okay for now.
 
-# Tasks
+## Tasks
 
 Items with ~~strikethru~~ styling are finished tasks. 
 
